@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+	<title>Intro to angular</title>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js'></script>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.js'></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div ng-controller = 'buttonCtrl as button'>
+		<button class = 'btn' ng-click='on = !on'>click me</button>
+		<h1 ng-show = 'on'>OH man</h1>
+		<button class = 'btn' ng-click = 'list = !list'>It's a list</button>
+		<ul class = 'list-group' ng-show = 'list'>
+			<li>Things 1</li>
+			<li>Things 2</li>
+			<li>Things 3</li>
+		</ul>
+		
+	</div>
+	<div ng-controller = 'textController as txtCtrl'>
+
+		
+		<h1 ng-mouseover ='txtCtrl.bangify($event)' ng-mouseleave = 'txtCtrl.unbang($event)'>This is a thing</h1>
+		<p ng-mouseover = 'txtCtrl.pinkify($event)' ng-mouseleave = 'txtCtrl.unpink($event)'> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+		<h2 ng-mouseover = 'txtCtrl.bangify($event)' ng-mouseleave = 'txtCtrl.unbang($event)'>Woot</h2>
+		<a href="#" ng-click = 'txtCtrl.confirm($event)'>I'M A LINK</a>
+	</div>
+
+
+
+<script type="text/javascript" src = 'app.js'></script>
+</body>
+</html>
